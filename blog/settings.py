@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-kk+pb*%o!p^zz6zt9cun-#7rsptr)bx#!_yb%#cv8s*3piescm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["portfolio-backend-for-deploy-zwf7.onrender.com"]
 
 
 # Application definition
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
+    "https://portfolio-frontrnd-for-deploy.vercel.app",
     "http://192.168.29.102:3000",
     "http://localhost:3000",
     "http://127.0.0.1:3000",

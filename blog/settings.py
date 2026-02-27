@@ -81,6 +81,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://192.168.29.102:3000",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    'https://seemsdev.vercel.app',
 ]
 
 DATABASES = {

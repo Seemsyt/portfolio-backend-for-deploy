@@ -58,9 +58,18 @@ class DashboardAccessView(generics.GenericAPIView):
         )
 
 
-class PricingView(generics.ListAPIView):
+class PricingView(generics.ListCreateAPIView):
     queryset = Pricing.objects.all()
-    serializer_class = PricingSerializer
+
+    def get_serializer_class(self):
+        if self.request.method == "POST":
+            return PricingManageSerializer
+        return PricingSerializer
+
+    def get_permissions(self):
+        if self.request.method == "POST":
+            return [IsAdminOrDashboardSecret()]
+        return []
 
 
 class ContactView(generics.CreateAPIView):
@@ -74,9 +83,14 @@ class ProjectViewHome(generics.ListAPIView):
     pagination_class = ProjectPagination
 
 
-class ProjectView(generics.ListAPIView):
+class ProjectView(generics.ListCreateAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
+
+    def get_permissions(self):
+        if self.request.method == "POST":
+            return [IsAdminOrDashboardSecret()]
+        return []
 
 
 class ProjectDetailView(generics.RetrieveUpdateAPIView):

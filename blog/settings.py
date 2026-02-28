@@ -87,6 +87,8 @@ CORS_ALLOWED_ORIGINS = [
 import os
 import dj_database_url
 
+DASHBOARD_SECRET_KEY = os.environ.get("DASHBOARD_SECRET_KEY", "tiagaseems")
+
 DATABASES = {
     "default": dj_database_url.parse(
         os.environ.get("DATABASE_URL")

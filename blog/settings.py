@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-kk+pb*%o!p^zz6zt9cun-#7rsptr)bx#!_yb%#cv8s*3piescm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["portfolio-backend-for-deploy-zwf7.onrender.com"]
+ALLOWED_HOSTS = ["portfolio-backend-for-deploy-zwf7.onrender.com",'portfolio-backend-for-deploy-1.onrender.com'] 
 
 
 # Application definition

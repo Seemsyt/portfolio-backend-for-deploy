@@ -1,5 +1,14 @@
 from django.urls import path
-from .views import ProfileView, RegisterView,PricingView,ContactView,ProjectViewHome,ProjectView
+from .views import (
+    ContactView,
+    PricingDetailView,
+    PricingView,
+    ProfileView,
+    ProjectDetailView,
+    ProjectView,
+    ProjectViewHome,
+    RegisterView,
+)
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
 
 
@@ -12,4 +21,6 @@ urlpatterns = [
     path('contact/',ContactView.as_view()),
     path('projects/home/',ProjectViewHome.as_view()),
     path('projects/',ProjectView.as_view()),
+    path('projects/<int:pk>/', ProjectDetailView.as_view()),
+    path('pricing/<int:pk>/', PricingDetailView.as_view()),
 ]

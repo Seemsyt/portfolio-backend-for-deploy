@@ -2,7 +2,13 @@ from django.shortcuts import render
 from rest_framework import generics
 
 from api.models import Contact, Pricing, Project
-from .serializer import ContactSeializer, PricingSerializer, ProjectSerializer, RegisterSerializer
+from .serializer import (
+    ContactSeializer,
+    PricingManageSerializer,
+    PricingSerializer,
+    ProjectSerializer,
+    RegisterSerializer,
+)
 from rest_framework import generics
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
@@ -47,4 +53,13 @@ class ProjectViewHome(generics.ListAPIView):
 class ProjectView(generics.ListAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    
+
+
+class ProjectDetailView(generics.RetrieveUpdateAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+
+
+class PricingDetailView(generics.RetrieveUpdateAPIView):
+    queryset = Pricing.objects.all()
+    serializer_class = PricingManageSerializer

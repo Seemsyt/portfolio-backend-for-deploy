@@ -36,6 +36,23 @@ class PricingSerializer(serializers.ModelSerializer):
             obj.feature_5,
             obj.feature_6,
         ]))
+
+class PricingManageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pricing
+        fields = [
+            'id',
+            'title',
+            'price',
+            'slug',
+            'is_admin',
+            'feature_1',
+            'feature_2',
+            'feature_3',
+            'feature_4',
+            'feature_5',
+            'feature_6',
+        ]
 class ContactSeializer(serializers.ModelSerializer):
     class Meta :
         model = Contact

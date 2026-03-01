@@ -26,7 +26,7 @@ class Contact(models.Model):
     
 class Project(models.Model):
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='media/%Y/%d')
+    image = models.ImageField(upload_to='%Y/%d')
     discription = models.TextField()
     live_link = models.URLField(blank=True)
 

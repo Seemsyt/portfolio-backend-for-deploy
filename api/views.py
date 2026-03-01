@@ -93,7 +93,7 @@ class ProjectView(generics.ListCreateAPIView):
         return []
 
 
-class ProjectDetailView(generics.RetrieveUpdateAPIView):
+class ProjectDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
@@ -103,7 +103,7 @@ class ProjectDetailView(generics.RetrieveUpdateAPIView):
         return []
 
 
-class PricingDetailView(generics.RetrieveUpdateAPIView):
+class PricingDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Pricing.objects.all()
     serializer_class = PricingManageSerializer
 
